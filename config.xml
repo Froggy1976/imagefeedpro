@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?> 
+<widget xmlns="http://www.w3.org/ns/widgets" 
+    xmlns:rim="http://www.blackberry.com/ns/widgets"
+    version="1.0.0.0" id="Image Feed Pro">   
+   
+    <name>Image Feed Pro</name> 
+    <author>InProgress™ Mobile Applications</author>
+    <description>Image Feed Pro integrates the most recently top tagged pictures on Instagram in order for you to view them onyour device.</description> 
+<content src="index.html"/> 
+
+	<icon src="images/icon.png"/>  
+	<feature id="blackberry.invoke" />
+	<feature id="blackberry.invoke.JavaArguments" />
+
+ <access uri="*" subdomains="true"/>
+</widget>

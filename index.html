@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+/*Copyright InProgress
+Business Solutions*/
+<head>
+    <title>Image Feed Pro</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta name="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="stylesheet" type="text/css" href="jquery.mobile-1.4.2.min.css">
+    
+<script src="instafeed.min.js"></script>
+    <script src="jquery-1.9.1.min.js"></script>
+    <script src="jquery.mobile-1.4.2.min.js"></script>
+</head>
+
+<body>
+
+    <div id="index" data-role="page" data-theme="b">
+
+        <script type="text/javascript">
+            $(function(){
+                $('#nospace').bind('keyup', function(){
+                  var value = $(this).val()
+                  $(this).val(value.replace(/\s+/g, ''));
+                });
+            });
+        </script> 
+        <script type="text/javascript">
+            function getUrlVars() {
+                var vars = {};
+                var parts = (($(this).data("url") && $(this).data("url").indexOf("?") > 0) 
+                                ? $(this).data("url") 
+                                : window.location.href ).replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+                    vars[key] = value;
+                });
+                return vars;
+            }
+        </script>
+        <script type="text/javascript">
+            $(document).on('pagehide', '#index', function(event, ui){
+                $(event.target).remove();
+            }); 
+            function goToPage()
+            {
+                var initial = "http://inprogress-business-solutions.co.za/imagefeedpro/";
+                $("#test").attr("href", initial+url);
+                window.location(initial+url);
+            }
+        </script>
+      <script type="text/javascript">
+            $(document).one('pageshow', '#index', function() {
+                var urlParams = getUrlVars();
+                var tag = typeof urlParams["id"] === 'undefined' ? 'awesome' : urlParams["id"];
+                //console.log(tag);
+                var feed = new Instafeed({
+                    get: 'tagged',
+                    tagName: tag,
+                    clientId: '9e2bdd7ae50743079ec8516cc19f986f',
+                    template: '<a href="{{link}}"><img src="{{image}}" /><\/a>',
+                    resolution: 'low_resolution',
+                    limit: '10'
+                });
+                feed.run();             
+            });
+        </script>
+
+        <header data-role="header" data-theme="b">
+            <div data-role="fieldcontain">
+                <form action="" class="form-search" id="input" name="input">
+                    <input id="nospace" name="id" placeholder="Search for a tag & press enter..." type="text"
+                    value="">
+                </form>
+            </div>
+            <br>
+        </header>
+
+        <div data-role="content" data-theme="a">
+            <p><img src="images/icon.png" alt="Image feed Pro">Image Feed Pro</p>
+
+            <p><a data-role="button" data-theme="b" href="#about">About Image Feed Pro</a></p>
+        </div>
+
+        <div data-collapsed="true" data-role=
+        "collapsible" data-theme="b" data-collapsed-icon="plus" data-expanded-icon="minus">
+            <h3>Choose a Tag</h3>
+
+          <p></p>
+
+            <ul data-role="listview">
+              <li><strong>The most popular 20 tags of 2014</strong></li>
+              <li><a href="index.html?id=instagood" rel="external">#instagood - 97,570,915 photos</a>
+              </li>
+
+                <li>
+                    <a href="index.html?id=me" rel="external">#me - 80,693,198</a>
+                </li>
+
+                <li>
+                    <a href="index.html?id=tbt" rel="external">#tbt - 75,411,509</a>
+                </li>
+
+                <li>
+                    <a href="index.html?id=cute" rel="external">#cute - 75,047,873</a>
+                </li>
+
+                <li>
+                    <a href="index.html?id=photooftheday" rel="external">#photooftheday - 70,995,806</a>
+                </li>
+
+                <li>
+                    <a href="index.html?id=instamood" rel="external">#instamood - 64,925,462</a>
+                </li>
+
+                <li>
+                    <a href="index.html?id=beautiful" rel="external">#beautiful - 54,570,181</a>
+                </li>
+
+                <li>
+                    <a href="index.html?id=picoftheday" rel="external">#picoftheday - 53,776,027</a>
+                </li>
+
+                <li>
+                    <a href="index.html?id=igers" rel="external">#igers - 52,997,258</a>
+                </li>
+
+                <li>
+                    <a href="index.html?id=girl" rel="external">#girl - 52,960,538</a>
+                </li>
+
+                <li>
+                    <a href="index.html?id=instadaily" rel="external">#instadaily - 51,313,415</a>
+                </li>
+
+                <li>
+                    <a href="index.html?id=iphonesia" rel="external">#iphonesia - 51,124,375</a>
+                </li>
+
+                <li>
+                    <a href="index.html?id=follow" rel="external">#follow - 46,372,281</a>
+                </li>
+
+                <li>
+                    <a href="index.html?id=tweegram" rel="external">#tweegram - 44,656,230</a>
+                </li>
+
+                <li>
+                    <a href="index.html?id=#happy" rel="external">#happy - 43,360,681</a>
+                </li>
+
+                <li>
+                    <a href="index.html?id=summer" rel="external">#summer - 42,718,347</a>
+                </li>
+
+                <li>
+                    <a href="index.html?id=instagramhub" rel="external">#instagramhub - 42,101,798</a>
+                </li>
+
+                <li>
+                    <a href="index.html?id=bestoftheday" rel="external">#bestoftheday - 40,202,550</a>
+                </li>
+
+                <li>
+                    <a href="index.html?id=iphoneonly" rel="external">#iphoneonly - 39,287,795</a>
+                </li>
+
+                <li>
+                    <a href="index.html?id=igdaily" rel="external">#igdaily - 36,932,129</a>
+                </li>
+
+                <li>
+                    <a href="index.html?id=fasion" rel="external">#fashion - 35,815,277</a>
+                </li>
+
+      
+            </ul>
+</div><br>
+
+        <div id="instafeed"></div><br>
+
+        <footer data-role="footer">
+            <h2><a href="#index" target="_top" data-icon="arrow-u" data-iconpos="left" data-role="button">Top</a></h2>
+        </footer>
+
+    </div>
+
+    <div id="about" data-role="page" data-theme="a">
+        <header data-role="header">
+            <h4>About Image Feed Pro</h4>
+        </header>
+
+        <div data-role="content">
+            <p><img src="images/icon.png" width="98" height="98" alt="Image feed Pro"><span class="ipcss">Image Feed Pro            integrates the most recently top tagged  pictures on Instagram in order for you to
+            view them on your device. There are several  links on the main menu of the top 20 tags of 2014 that are viewable
+            with a single click, or you can use the handy search box to see photos of any tag that
+            you'd like!</span></p>
+            <h3 class="ipcss">Below you have two options of how you can use Image Feed Pro.</h3>
+            <ul>
+              <li class="ipcss">If you do have an account with Instagram click the corresponding button (This will verify your membership and allow you to do what any Instagram account user can do)</li>
+              <li class="ipcss">If You don't have an account with Instagram, then click the corresponding button. (You will still be able to search and view the awesomeness of Instagram, just without the extra privileges)            </li>
+            </ul>
+            <p class="ipcss"><a href="https://instagram.com/oauth/authorize/?client_id=9e2bdd7ae50743079ec8516cc19f986f&redirect_uri=http://inprogress-business-solutions.co.za/imagefeedpro/index.html&response_type=token" data-role="button" data-icon="info" data-iconpos="left">I have an account</a> (Allows likes and comments with Instagram&reg; )</p>
+            <p class="ipcss"><a href="#index" data-role="button" data-icon="info" data-iconpos="left">I don't have an account</a> (No direct interaction with Instagram&reg;)</p>
+        </div>
+    </div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51489210-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</html>
